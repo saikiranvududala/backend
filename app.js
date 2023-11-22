@@ -6,7 +6,7 @@ const bodyParser = require("body-parser");
 const cors = require("cors");
 
 app.use(cors({
-  origin: 'http://localhost:3000',
+  origin: ['http://localhost:3000','https://sneakers-store-app-frontend.onrender.com'],
   credentials: true
 }));
 
@@ -47,6 +47,9 @@ app.use("/api/v2/event", event);
 app.use("/api/v2/coupon", coupon);
 app.use("/api/v2/payment", payment);
 app.use("/api/v2/withdraw", withdraw);
+app.get("/test",(req,res)=>{
+  res.send("API IS RUNNING");
+})
 
 // it's for ErrorHandling
 app.use(ErrorHandler);
